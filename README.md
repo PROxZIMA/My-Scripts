@@ -3,7 +3,7 @@
 These are some random scripts which I made and use (almost) daily.<br>Some of them work only on linux though.
 
 ### animeRelease.py
-Check your watch status of airing anime. Only if you are registered on (Anilist)[https://anilist.co/]. Change `PROxZIMA` in `userName` to your default name so usage command won't require an extra argument everytime you run.
+Check your watch status of airing anime. Only if you are registered on [Anilist](https://anilist.co/). Change `PROxZIMA` in `userName` to your default name so usage command won't require an extra argument everytime you run.
 
 Usage: `python animeRelease.py [userName]`
 
