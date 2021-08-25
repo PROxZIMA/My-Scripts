@@ -5,7 +5,10 @@ These are some random scripts which I made and use (almost) daily.<br>Some of th
 ### `animeRelease.py`
 Check your watch status of airing anime. Only if you are registered on [Anilist](https://anilist.co/). Change `PROxZIMA` in `userName` to your default name so usage command won't require an extra argument everytime you run.
 
-Usage: `python animeRelease.py [userName]`
+### `gitDownload.sh`
+Simple GitHub folder downloader using SVN.
+
+Usage: `gitDownload.sh [FolderLink]`
 
 ### `enableAutoscrolling.py`
 Enables autoscrolling by clicking mouse middle button. Works only on linux. Set it as startup script so you won't need to run it everytime you plugin a receiver.
