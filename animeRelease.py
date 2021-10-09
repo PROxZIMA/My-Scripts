@@ -16,4 +16,4 @@ except TypeError:
 
 print('Anime                 On  Next Release')
 for i in data:
-    print(f"{i['media']['title']['english'][:21]:<22}{i['progress']:<4}{i['media']['nextAiringEpisode']['episode']: >3}/{i['media']['episodes']:<4}{str(td(seconds=i['media']['nextAiringEpisode']['timeUntilAiring']))[:-3]}")
+    print(f"{str(i['media']['title']['english'])[:21]:<22}{i['progress']:<4}{i['media']['nextAiringEpisode']['episode']: >3}/{i['media']['episodes']:<4}{str(td(seconds=i['media']['nextAiringEpisode']['timeUntilAiring']))[:-3]}")
