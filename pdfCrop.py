@@ -4,7 +4,7 @@ from subprocess import Popen, PIPE
 try:
     _, inp, l, b, r, t, out = sys.argv
 except Exception as e:
-    print('Usage: python pdfcrop.py infile left% bottom% right% top% outfile\n' +
+    print('Usage: pdfcrop infile left% bottom% right% top% outfile\n' +
           '     % indicates cropping precentage from it\'s respective margin')
     exit()
 
