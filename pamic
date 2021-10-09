@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+case "$1" in
+  start)
+    $0 stop;
+    MICADDR=${2:-http://192.168.0.100:8080/audio.opus};
+    FILE=$(mktemp -u);
+    pactl load-module module-pipe-source source_name=virtualmic file=$FILE format=s16le rate=44100 channels=1 && echo "$FILE source generated";
+    pactl set-default-source virtualmic;
+    ffmpeg -y -loglevel error -nostdin -i $MICADDR -f s16le -ac 1 -ar 44100 $FILE &
+    echo "Hearing at $MICADDR"
+    ;;
+  stop)
+    pactl unload-module `pactl list | grep -Poz '(?s)Name: virtualmic.*?Owner Module: \K(\d+)'`;
+    FFMPEGPID=$(pgrep -f "ffmpeg -y -loglevel error -nostdin -i 'http");
+    { kill $FFMPEGPID && wait $FFMPEGPID; } 2>/dev/null;
+    ;;
+  *)
+    echo "Usage: $0 start [Mic address with port] | stop" >&2
+    ;;
+esac
