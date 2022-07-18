@@ -7,7 +7,7 @@ BASE=${LINK#*tree/}
 
 IFS='/' read -r CURRBRANCH FOLDER <<< $BASE
 
-if [[ $CURRBRANCH != "master" ]]; then
+if [[ $CURRBRANCH != "master" ]] || [[ $CURRBRANCH != "main" ]]; then
   BRANCH="branches/"$CURRBRANCH
 fi
 
